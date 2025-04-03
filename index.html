@@ -3,33 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World-Clock - Naledi</title>
   </head>
   <body>
     <div class="container">
       <h1>World-Clock</h1>
 
-      <select>
+      <select id="city">
         <option value="">select a city</option>
-        <option value="">Cape Town</option>
-        <option value="">Pretoria</option>
-        <option value="">Bloemfontein</option>
+        <option value="Africa/Maputo">Maputo</option>
+        <option value="Africa/Lagos">Lagos</option>
+        <option value="Africa/Cairo">Cairo</option>
       </select>
-
-      <div class="city">
-        <div>
-          <h2>Johannesburg</h2>
-          <div class="date">02 April 2025</div>
+      <div id="cities">
+        <div class="city" id="johannesburg">
+          <div>
+            <h2>Johannesburg</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time">4:46 <small>PM</small></div>
-      </div>
-      <div class="city">
-        <div>
-          <h2>Johannesburg</h2>
-          <div class="date">02 April 2025</div>
+        <div class="city" id="nairobi">
+          <div>
+            <h2>Nairobi</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time">4:46 <small>PM</small></div>
       </div>
     </div>
 
