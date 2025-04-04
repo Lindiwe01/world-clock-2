@@ -1,12 +1,12 @@
 function updateTime() {
-  //johannesburg
-  let johannesburgElement = document.querySelector("#johannesburg");
-  if (johannesburgElement) {
-    let johannesburgDateElement = johannesburgElement.querySelector(".date");
-    let johannesburgTimeElement = johannesburgElement.querySelector(".time");
-    johannesburgTime = moment().tz("Africa/Johannesburg");
-    johannesburgDateElement.innerHTML = johannesburgTime.format("MMMM Do YYYY");
-    johannesburgTimeElement.innerHTML = johannesburgTime.format(
+  //chicago
+  let chicagoElement = document.querySelector("#chicago");
+  if (chicagoElement) {
+    let chicagoDateElement = chicagoElement.querySelector(".date");
+    let chicagoTimeElement = chicagoElement.querySelector(".time");
+    chicagoTime = moment().tz("America/Chicago");
+    chicagoDateElement.innerHTML = chicagoTime.format("MMMM Do YYYY");
+    chicagoTimeElement.innerHTML = chicagoTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
@@ -25,6 +25,9 @@ function updateTime() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
